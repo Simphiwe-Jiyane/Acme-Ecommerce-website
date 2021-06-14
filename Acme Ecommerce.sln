@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme Ecommerce", "Acme Ecommerce.csproj", "{D8BE008E-D111-4BEB-9FAD-DEC1346F344F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme Database Utility", "..\Acme Database Utility\Acme Database Utility.csproj", "{5D7A9856-1718-478D-AC83-9864D75EB40F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8BE008E-D111-4BEB-9FAD-DEC1346F344F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8BE008E-D111-4BEB-9FAD-DEC1346F344F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8BE008E-D111-4BEB-9FAD-DEC1346F344F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8BE008E-D111-4BEB-9FAD-DEC1346F344F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7A9856-1718-478D-AC83-9864D75EB40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7A9856-1718-478D-AC83-9864D75EB40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7A9856-1718-478D-AC83-9864D75EB40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7A9856-1718-478D-AC83-9864D75EB40F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D6D3737-5B19-4CB9-8579-5BEE0E3B3A4C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,73 @@
+﻿@model Acme_Ecommerce.Models.ProductModel
+
+@{
+    ViewBag.Title = "BuyProduct";
+}
+
+
+
+
+<div class="container  mt-5" style="height: 100vh !important;">
+
+
+    <div class="my-container" style="height: 600px !important; margin-left:5vw;
+        width: 30vw; background-color: #f8f8ff !important;
+        position: relative; border-radius: 20px;
+        border: 1px solid #F9C80E; 
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); ">
+        <img style="height:400px; width: 460px; border-radius: 20px 20px 0px 0px;" src="~/Assets/Product Images/phone.jpg" alt="Alternate Text" />
+        <h3 style="text-align:center; margin-top:20px; font-size: 20px" >@Model.name</h3>
+        <p class="lead" style="padding:20px; margin-top: 20px; font-size: 15px">
+            Some very words about an IPhone that will probably be able to type words by reading
+            your mind
+        </p>
+    </div>
+
+    <div style="background-color: #f8f8ff; height: 40vh; width: 23vw; position: absolute; left: 60vw; bottom: 40vh; border-radius: 20px; border: 1px solid #F9C80E; box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); ">
+
+        <h2 class="lead" style="position:absolute; font-size: 40px; top: 30px; left:20px">R @Model.price</h2>
+        
+        @Html.ActionLink("Add to cart", "Checkout", "Home", Model, new { @class = "btn btn-warning", style= "position: absolute; top: 120px; left: 20px; width: 300px" })
+        @Html.ActionLink("Add to wishlist", "Index", "Login", new { area = "" }, new { @class = "btn btn-outline-danger", style= "position: absolute; top: 180px; left: 20px; width: 300px" })
+
+    </div>
+
+</div>
+
+
+
+
+@*<div>
+    <h4>ProductModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

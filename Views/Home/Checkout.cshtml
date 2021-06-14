@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Acme_Ecommerce.Models.ProductModel>
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+
+@if (ViewBag.Bool == false)
+{
+
+
+
+    <div class="container" style="padding: 50px">
+
+        <h2>Your Cart is empty... </h2>
+
+    </div>
+
+}
+
+@if(ViewBag.Bool == true)
+{
+
+    <div class="container" style="padding: 50px">
+        <h2>Your cart</h2>
+        <table class="table">
+            <tr>
+                <th class="text-center">
+                    Product
+                </th>
+                <th></th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Price
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="padding:20px;">
+                        <img style="height: 40px; width: 40px;" src="~/Assets/Product Images/phone.jpg" alt="Alternate Text" />
+                    </td>
+                    <td style="padding:20px;">
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td style="padding:20px;">
+                        @Html.DisplayFor(modelItem => item.type)
+                    </td>
+                    <td style="padding:20px;">
+                        R @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    <td style="padding:20px;">
+                        @Html.ActionLink("Checkout", "Checkout", "Home", null , new { @class = "btn btn-warning", style = "width: 300px; margin-right:0px;" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+}
+
+
+
+

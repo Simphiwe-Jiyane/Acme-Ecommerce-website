@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Acme_Ecommerce.Models.ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*Carousel area*@
+
+
+
+
+<div class="main-content">
+
+
+    @if (ViewBag.Bool == false)
+    {
+        <div class="container text-center" style="padding: 200px">
+            <h2>No products to display</h2>
+        </div>
+    }
+    else if (ViewBag.Bool == true)
+    {
+        <div class="container">
+
+            <h2 class="lead text-center" style="padding:0px 0px 60px 30px; font-size: 25px;">All that we have in @Model.First().type.ToUpper()</h2>
+
+            <div class="row">
+                @foreach (var prod in Model)
+                {
+                    <div class="card" style="width: 18rem;">
+                        <img src="~/Assets/Product Images/phone.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@prod.name</h5>
+                            <p class="card-text" style="margin-top: 30px;">
+                                Some very words about an IPhone that will probably be able to type words by readingg
+                                your mind
+                            </p>
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="col-6">
+                                    @if (Convert.ToBoolean(Session["isLoggedIn"]) == false)
+                                    {
+                                        @Html.ActionLink("Buy Now", "Index", "Login", new { area = "" }, new { @class = "btn btn-warning" });
+                                    }
+                                    else
+                                    {
+
+                                        @Html.ActionLink("Buy Now", "BuyProduct", "Home", prod, new { @class = "btn btn-warning" });
+                                    }
+                                </div>
+                                <div style="font-size: 16px; margin-top: 12px;" class="col-5 lead">
+                                    <p>R @prod.price</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                }
+
+            </div>
+        </div>
+
+    }
+
+</div>
+

@@ -1,0 +1,210 @@
+﻿body {
+    background-color: #fefefe !important;
+}
+
+
+
+.logo {
+    height: 150px;
+}
+
+.navbar {
+    background: #F9C80E !important;
+    height: 90px !important;
+}
+
+
+.nav-item {
+    padding: 20px !important;
+}
+
+.nav-link {
+    font-size: 18px !important;
+    transition: ease-in 0.2s;
+}
+
+    .nav-link:hover {
+        color: #fff !important;
+    }
+
+
+.cart-icon {
+    font-size: 20px !important;
+    color: #000 !important;
+    height: 10px !important;
+    width: 10px !important;
+    margin-right: 45px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+}
+
+    .cart-icon:hover {
+        color: #fefefe !important;
+    }
+
+.wish-list-icon {
+    font-size: 20px !important;
+    color: #000 !important;
+    height: 10px !important;
+    width: 10px !important;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+}
+
+    .wish-list-icon:hover {
+        color: #fefefe !important;
+    }
+
+
+
+.authorization-menu {
+    margin-right: 50px !important;
+}
+
+    .authorization-menu .btn-outline-primary {
+        font-size: 13px !important;
+        margin-right: 20px;
+        width: 120px !important;
+        color: #000 !important;
+        border-color: #000 !important;
+    }
+
+        .authorization-menu .btn-outline-primary:hover {
+            color: #F9C80E !important;
+            border-color: #F9C80E !important;
+            background-color: #333 !important;
+        }
+
+
+
+
+
+.carousel-item {
+    height: 650px !important;
+}
+
+.carousel-caption {
+    margin-bottom: 100px !important;
+}
+
+
+    .carousel-caption h5 {
+        font-size: 60px;
+        margin-bottom: 100px !important;
+    }
+
+
+
+
+/* Main content area */
+
+.main-content {
+    padding-top: 123px;
+    border-left: 3px solid #F9C80E;
+    border-right: 3px solid #F9C80E;
+}
+
+/* Buttons */
+
+.my-btn {
+    width: 200px !important;
+    height: 50px !important;
+    Background-color: #F9C80E;
+    transition: 0.3s ease;
+}
+
+    .my-btn:hover {
+        background-color: #fff;
+        border: 1px solid #F9C80E;
+        color: #000;
+    }
+
+.card {
+    height: 460px !important;
+    margin: 0 auto auto 70px !important;
+    transition: ease-in-out 0.1s !important;
+    transition-duration: 0.1s !important;
+    margin-bottom: 70px !important;
+}
+
+
+
+    .card:hover {
+        border: 1px solid #F9C80E !important;
+
+
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        z-index: 1
+    }
+
+
+/* Footer */
+
+.card-footer {
+    background-color: #616161 !important;
+    height: 200px
+}
+
+
+.login-page {
+    height: 100vh;
+    width: 100vw;
+    background-color: #F9C80E;
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: #fff;
+    width: 50vw;
+    height: 30vw;
+    margin: auto;
+    border-radius: 5px;
+}
+
+    .login-container .btn-outline-primary {
+        width: 120px !important;
+        color: #000 !important;
+        border-color: #000 !important;
+    }
+
+
+        .login-container .btn-outline-primary:hover {
+            color: #F9C80E !important;
+            border-color: #F9C80E !important;
+            background-color: #333 !important;
+        }
+
+.form-control {
+    border: 1px solid #333 !important;
+    background-color: #fefefe !important;
+}
+
+.login-wrapper .form-control {
+    border: none !important;
+    border-bottom: 1px solid #e7e7e7 !important;
+    border-radius: 0 !important;
+    padding: 9px 5px !important;
+    min-height: 40px !important;
+    font-size: 18px !important;
+}
+
+
+.my-container{
+    height: 500px !important;
+    width: 30vw;
+    background-color: #333!important;
+    position: relative;
+}
+
+.icon:hover {
+    color: #fefefe !important;
+}
+
+.wish-list-icon-buy{
+
+
+}

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Acme_Ecommerce.Models.ProductModel>
+
+@{
+    ViewBag.Title = "OrderHistory";
+}
+
+<h2 style="padding-left: 30px; padding-top: 30px;">OrderHistory</h2>
+
+
+@if (ViewBag.Bool == false)
+{
+
+    <div class="container text-center" style="padding: 200px">
+        <h2>You Have no recent orders/purchases</h2>
+    </div>
+
+
+}
+else if (ViewBag.Bool == true)
+{
+
+<div class="container" style="padding:150px;">
+    <p class="lead">
+        Your order history
+    </p>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img style="height:50px; width:50px" src="~/Assets/Product Images/phone.jpg" alt="Alternate Text" /></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+}
+
+

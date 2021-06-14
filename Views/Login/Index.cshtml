@@ -1,0 +1,83 @@
+﻿@model Acme_Ecommerce.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <title>Index</title>
+
+</head>
+<body>
+
+    <main>
+        @if (ViewBag.Bool == true)
+        {
+            <div class="alert alert-success" role="alert" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" data-dismiss="alert">
+                    x
+                </button>
+                @ViewBag.Message
+            </div>
+        }
+        else if (ViewBag.Bool == false)
+        {
+            <div class="alert alert-danger" style="300px;" role="alert" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" data-dismiss="alert">
+                    x
+                </button>
+                @ViewBag.Message
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-sm-6 login-section-wrapper">
+                <div class="brand-wrapper">
+                    <a href="index.html"><img src="~/Assets/App Images/Acme-logo-2.png" alt="logo" class="logo"></a>
+                </div>
+                <div class="login-wrapper my-auto">
+                    <h1 class="lead mb-5 mt-5">Log in</h1>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "" })
+
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", type = "email", placeholder = "acme@example.com" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "" })
+
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password", placeholder = "Your password" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                        </div>
+
+
+                        <input type="submit" value="Login" class="btn btn-block login-btn" />
+
+                    }
+                    <a href="#!" class="forgot-password-link">Forgot password?</a>
+                    <p class="login-wrapper-footer-text">Don't have an account? <a href="signup.html" class="text-reset">Register here</a></p>
+                </div>
+            </div>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="~/Assets/App Images/login-image.jpg" alt="login image" class="login-img">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

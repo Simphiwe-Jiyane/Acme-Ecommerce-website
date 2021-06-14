@@ -1,0 +1,131 @@
+﻿@model IEnumerable<Acme_Ecommerce.Models.ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*Carousel area*@
+
+<div class="container-fluid px-0 headline">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Assets/App Images/pexels-tyler-lastovich-699122.jpg" class="d-block w-100 header-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="lead">Shop the <span style="color: #F9C80E">latest</span>  tech</h5>
+                    <button style="width: 200px !important; height: 50px !important;" class="btn my-btn">Shop now</button>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Assets/App Images/pexels-polina-zimmerman-3747279.jpg" class="d-block w-100 header-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="lead">Grab your next <span style="color: #F9C80E">Book</span></h5>
+                    <button style="width: 200px !important; height: 50px !important;" class="btn my-btn">Shop now</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Assets/App Images/pexels-free-creative-stuff-1377034.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="lead" style="color: #000">Glam up with great <span style="color: #F9C80E">Cosmetics</span></h5>
+                    <button style="width: 200px !important; height: 50px !important;" class="btn my-btn">Shop now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="main-content">
+
+    <div class="container">
+        <div class="row">
+            @foreach (var prod in Model)
+            {
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Assets/Product Images/phone.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@prod.name</h5>
+                        <p class="card-text" style="margin-top: 30px;">
+                            Some very words about an IPhone that will probably be able to type words by readingg
+                            your mind
+                        </p>
+                        <div class="row" style="margin-top: 30px;" >
+                            <div class="col-6">
+                                @if(Convert.ToBoolean(Session["isLoggedIn"]) == false)
+                                {                                  
+                                    @Html.ActionLink("Buy Now", "Index", "Login", new { area = "" }, new { @class = "btn btn-warning" });
+                                }
+                                else
+                                {
+
+                                    @Html.ActionLink("Buy Now", "BuyProduct", "Home", prod, new { @class = "btn btn-warning"});
+                                }
+                            </div>
+                            <div style="font-size: 16px; margin-top: 12px;" class="col-5 lead">
+                                <p>R @prod.price</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Product image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img style="height:50px; width:50px" src="~/Assets/Product Images/phone.jpg" alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
